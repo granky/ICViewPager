@@ -205,7 +205,7 @@
     CGFloat topLayoutGuide = 0.0;
     if (IOS_VERSION_7) {
         if(![UIApplication sharedApplication].statusBarHidden){
-            topLayoutGuide = 20.0;
+            topLayoutGuide = [[UIApplication sharedApplication] statusBarFrame].size.height;
         }
         if (self.navigationController && !self.navigationController.navigationBarHidden) {
             topLayoutGuide += self.navigationController.navigationBar.frame.size.height;
